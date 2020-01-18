@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Entity
+    xmlns="http://schemas.directx12gameengine.com/xaml"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="clr-namespace:DirectX12Game;assembly=DirectX12Game"
+    xmlns:sn="clr-namespace:System.Numerics;assembly=System.Numerics.Vectors"
+    Name="Entity">
+    <Entity.Children>
+        <Entity Name="MainCamera">
+            <Entity.Components>
+                <TransformComponent
+                    Position="0,50,800"
+                    Rotation="0,0,0,1"
+                    Scale="1,1,1" />
+                <CameraComponent
+                    x:Name="__ReferenceID0"
+                    AspectRatio="1.77777779"
+                    FarPlaneDistance="100000"
+                    FieldOfView="60"
+                    NearPlaneDistance="0.1"
+                    UseCustomAspectRatio="False" />
+            </Entity.Components>
+        </Entity>
+        <Entity Name="CameraController">
+            <Entity.Components>
+                <TransformComponent
+                    Position="0,0,0"
+                    Rotation="0,0,0,1"
+                    Scale="1,1,1" />
+                <d:CameraController Camera="{x:Reference __ReferenceID0}" />
+            </Entity.Components>
+        </Entity>
+        <Entity Name="shark001">
+            <Entity.Components>
+                <TransformComponent
+                    Position="0,120,0"
+                    Rotation="0,0.5475091,0,-0.8367973"
+                    Scale="0.2,0.2,0.2" />
+                <ModelComponent Model="Assets\Models\SwimmingShark_Model" />
+                <d:RotatorScript />
+            </Entity.Components>
+        </Entity>
+        
+        <Entity Name="cliffhouse001">
+            <Entity.Components>
+                <TransformComponent
+                    Position="400,0,0"
+                    Rotation="0,0.5475091,0,-0.8367973"
+                    Scale="2,2,2" />
+                <ModelComponent Model="Assets\Models\Cliffhouse_Model" />
+                <d:RotatorScript />
+            </Entity.Components>
+        </Entity>
+        <Entity Name="iconFailure001">
+            <Entity.Components>
+                <TransformComponent
+                    Position="-400,0,0"
+                    Rotation="0,0.5475091,0,-0.8367973"
+                    Scale="50,50,50" />
+                <ModelComponent Model="Assets\Models\Icon_Failure_Model" />
+                <d:RotatorScript />
+            </Entity.Components>
+        </Entity>
+       
+        <Entity Name="MyLight1">
+            <Entity.Components>
+                <TransformComponent
+                    Position="0,300,1500"
+                    Rotation="0,0,0,1"
+                    Scale="1,1,1" />
+                <LightComponent Intensity="0.5">
+                    <LightComponent.Light>
+                        <DirectionalLight Color="1,1,1">
+                            <DirectionalLight.Shadow>
+                                <DirectionalLightShadowMap Enabled="False" />
+                            </DirectionalLight.Shadow>
+                        </DirectionalLight>
+                    </LightComponent.Light>
+                </LightComponent>
+            </Entity.Components>
+        </Entity>
+        <Entity Name="MyLight2">
+            <Entity.Components>
+                <TransformComponent
+                    Position="0,300,1500"
+                    Rotation="0,0.5475091,0,-0.8367973"
+                    Scale="1,1,1" />
+                <LightComponent Intensity="0.5">
+                    <LightComponent.Light>
+                        <DirectionalLight Color="1,1,1">
+                            <DirectionalLight.Shadow>
+                                <DirectionalLightShadowMap Enabled="False" />
+                            </DirectionalLight.Shadow>
+                        </DirectionalLight>
+                    </LightComponent.Light>
+                </LightComponent>
+                <d:RotatorScript />
+            </Entity.Components>
+        </Entity>
+        <Entity Name="cliffhouse002">
+            <Entity.Components>
+                <TransformComponent
+                    Position="0,120,500"
+                    Rotation="0,0.5475091,0,-0.8367973"
+                    Scale="1,1,1" />
+                <ModelComponent Model="Assets\Models\Cliffhouse_Model" />
+                <d:RotatorScript />
+            </Entity.Components>
+        </Entity>
+        <Entity Name="TestEntity">
+            <Entity.Components>
+                <TransformComponent
+                    Position="0,0,0"
+                    Rotation="0,0,0,1"
+                    Scale="1,1,1" />
+                <d:TestScript
+                    MyColorChannel="G"
+                    MyOtherColorChannel="B"
+                    NullProperty="{x:Null}">
+                    <d:TestScript.MyStringList>
+                        <x:String>One</x:String>
+                        <x:String>Two</x:String>
+                        <x:String>Three</x:String>
+                        <x:String>Four</x:String>
+                    </d:TestScript.MyStringList>
+                    <d:TestScript.MyVectorList>
+                        <sn:Vector3>4,3,2</sn:Vector3>
+                        <sn:Vector3>34,2,9</sn:Vector3>
+                    </d:TestScript.MyVectorList>
+                </d:TestScript>
+            </Entity.Components>
+        </Entity>
+    </Entity.Children>
+    <Entity.Components>
+        <TransformComponent
+            Position="0,0,0"
+            Rotation="0,0,0,1"
+            Scale="1,1,1" />
+    </Entity.Components>
+</Entity>

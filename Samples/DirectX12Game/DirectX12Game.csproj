@@ -22,8 +22,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Scenes\Scene2.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\DirectX12GameEngine.Assets\DirectX12GameEngine.Assets.csproj" />
     <ProjectReference Include="..\..\DirectX12GameEngine.Engine\DirectX12GameEngine.Engine.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Assets\Scenes\Scene2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Content>
   </ItemGroup>
 
 </Project>
